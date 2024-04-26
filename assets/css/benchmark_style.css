@@ -1,0 +1,178 @@
+* {
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(58, 52, 58);
+  font-size: 18px;
+  text-rendering: optimizelegibility;
+}
+
+html, body {
+  font-family: Open Sans, Source Sans Pro, DejaVu Sans, Linux Libertine;
+  line-height: 1.4;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+}
+
+.main {
+  display: flex;
+  -moz-box-pack: center;
+  justify-content: center;
+  margin-top: 0em;
+  margin-right: 1em;
+  margin-bottom: 3em;
+  margin-left: 1em;
+}
+
+.content {
+  max-width: 75%;
+  flex-grow: 1;
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+}
+
+table {
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  border-spacing: 0;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+table th {
+  padding: 3px 10px;
+  border-bottom: 1px solid black;
+}
+
+table td {
+  padding: 3px 10px;
+}
+
+blockquote {
+  padding: 0 1em;
+  color: #57606a;
+  border-left: .25em solid #57606a;
+}
+
+code {
+  display: block;
+  word-wrap: break-word;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+}
+
+footer p {
+  font-style: italic;
+}
+
+@media screen and (max-width: 767px) {
+  .main {
+    flex-direction: column;
+  }
+  .nav {
+    max-width: none;
+  }
+  .content {
+    max-width: 100%;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.logoleft, .logoright {
+  flex: 0 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.author {
+  text-align: center;
+  margin-top: 20px;
+}
+
+img {
+  margin: 10px;
+}
+
+.navbar {
+  text-align: right;
+  padding: 10px 0;
+  margin-bottom: 1em;
+}
+
+.navbar a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar a:hover {
+  color: #555;
+}
+
+.heading {
+  display: inline-block;
+  font-size: 180%;
+  font-weight: 800;
+  color: white;
+  padding-left: 15px;
+  padding-right: 17px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.blue {
+  background-color: rgb(0, 123, 167);
+}
+
+.red {
+  background-color: rgb(238, 20, 102);
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    display: block;
+    text-align: center;
+  }
+
+  .logoleft, .logoright {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar {
+    text-align: center;
+  }
+
+  .navbar a {
+    margin-right: 10px;
+  }
+}
