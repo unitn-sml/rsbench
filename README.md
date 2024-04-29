@@ -1,6 +1,6 @@
 # Benchmarks for Reasoning Shortcuts: When Machine Learning Concepts Go Astray
 
-Web site for the "New Problems, New Benchmarks: Reasoning Shortcuts in the Wild" paper made with [Jekyll](https://jekyllrb.com/) and hosted with [GitHub Pages](https://pages.github.com/).
+Web site for the "Benchmarks for Reasoning Shortcuts: When Machine Learning Concepts Go Astray" paper made with [Jekyll](https://jekyllrb.com/) and hosted with [GitHub Pages](https://pages.github.com/).
 
 The website is completely static and does not include JavaScript.
 
