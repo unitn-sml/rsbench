@@ -1,4 +1,4 @@
-# Benchmarks for Reasoning Shortcuts: When Machine Learning Concepts Go Astray
+# A Benchmark Suite for Systematically Evaluating Reasoning Shortcuts
 
 Web site for the "Benchmarks for Reasoning Shortcuts: When Machine Learning Concepts Go Astray" paper made with [Jekyll](https://jekyllrb.com/) and hosted with [GitHub Pages](https://pages.github.com/).
 
