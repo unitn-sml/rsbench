@@ -46,24 +46,37 @@ should definitely predict `stop`.
 right label by inferring the wrong concepts.  For instance, it might confuse
 `pedestrian`s for `red_light`s as both entail the same (correct) `stop` action.
 
-**What consequences to RSs have?** RSs can compromise model explanations (e.g.,
-because these show that `red_light`s are responsible for the predictions, while
-in fact this depends on the presence of red lights
+**What are the consequences?** RSs can compromise the *interpretability* of
+model explanations (e.g., these might show that a prediction depends on the
+`red_light`s present in the image, while in reality it depends on
+`pedestrian`s!) and *generalization* to out-of-distribution tasks (e.g., if a
+vehicle is authorized to cross over `red_light`s in the case of an emergency,
+and it confuses these with `pedestrian`s, this might lead to harmful
+decisions).
 
 
 <h1 class="heading blue"><a name="overview">Overview</a></h1>
 
-rsbench supplies several *data sets* for 5 learning and reasoning (L&R) tasks.
-It also provides *data generators* for creating additional data splits.  WRITEME
+- *A Variety of L&R Tasks*: rsbench offers five L&R tasks and at least one data
+  set each.  The tasks come in differet flavous: arithmetic, logic, and
+  high-stakes.  It also provides data generators for creating new OOD splits
+  useful for testing the down-stream consequences of RSs.
 
-- *A Variety of L&R Tasks*: WRITEME different types of input and flavours of
-  knowledge.  Support for OOD splits.
+- *Evaluation*: rsbench comes with implementations for several metrics for
+  evaluating the quality of *label* and *concept* predictions, as well as
+  visualization code for them.
 
-- *Evaluation*: WRITEME
+- *Verification*: rsbench implements a new algorithm, `countrss`, that makes
+  use of automated reasoning packages for formally veryfing whether a L&R task
+  allows for RSs without training any model!  This tool works with any prior
+  knowledge encoded in CNF format, the de-facto standard in automated
+  reasoning.
 
-- *Verification*: WRITEME
+- *Example code*: our repository comes with example code for training and
+  evaluating a selection of state-of-the-art machine learning architectures,
+  including Neuro-Symbolic models, Concept-bottleneck models, and regular
+  neural networks.
 
-- *Example code*: WRITEME
 
 | L&R Task        | Images       | Concepts                                                             | Labels                      | #Train | #Valid | #Test  | #OOD   |
 | :--             | :--:         | :--:                                                                 | :--:                        | :--:   | :--:   | :--:   | :--:   |
