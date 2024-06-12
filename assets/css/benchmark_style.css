@@ -45,9 +45,11 @@ table {
   border-bottom: 2px solid black;
   border-top: 2px solid black;
   border-spacing: 0;
-  width: 80%;
+  width: 95%;
   margin: auto;
   margin-bottom: 1em;
+  display: block;
+  overflow-x: auto;
 }
 
 table th {
@@ -59,6 +61,11 @@ table td {
   padding: 3px 10px;
 }
 
+.table-wrapper {
+  overflow-x: auto;
+  margin: auto;
+}
+
 blockquote {
   padding: 0 1em;
   color: #57606a;
@@ -66,10 +73,7 @@ blockquote {
 }
 
 code {
-  display: block;
-  word-wrap: break-word;
-  max-width: 100%;
-  overflow-x: auto;
+  font-family: monospace;
 }
 
 footer {
@@ -79,6 +83,19 @@ footer {
 
 footer p {
   font-style: italic;
+}
+
+ul {
+  list-style-position: inside;
+  margin-bottom: 2em;
+}
+
+ul li {
+  margin-bottom: 1em;
+}
+
+ul li p {
+  display: inline;
 }
 
 @media screen and (max-width: 767px) {
