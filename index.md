@@ -153,12 +153,14 @@ WRITEME
 
 <h1 class="heading blue"><a name="verification">Verification</a></h1>
 
-`count-rss` is a small tool that is able to enumerate the RSs in a task by reducing the task to model counting (\#SAT).
-Due to their large number even on seemingly simple tasks, `count-rss` includes the state-of-the-art approximate \#SAT solver `ApproxMC` (https://github.com/meelgroup/approxmc).
-Custom tasks can be defined as logical formulas in conjunctive normal form (CNF) in DIMACS format. 
-The output of the encoding procedure is itself a DIMACS file.
+`count-rss` is a small tool that is able to enumerate the RSs in a task by
+reducing the task to model counting (\#SAT).  In short, `count-rss` takes a
+DIMACS CNF specification of the prior knowledge and a data set, and outputs a
+DIMACS CNF specification of the RS counting problem, which can be fed to any
+\#SAT solver. Due to their large number even on seemingly simple tasks, we
+suggest using the state-of-the-art approximate \#SAT solver
+[ApproxMC](https://github.com/meelgroup/approxmc).
 
-# Usage
 
 ## Generating the RSs counting encoding
 
@@ -191,13 +193,18 @@ $ python gen-rss-count.py cnf and.cnf
 
 Use the flag `-h` for help on additional arguments.
 
-## Approximately count RSs via approximate model counting
+
+## Counting RSs with pyapproxmc
 
 Once the encoding of the problem is generated with `gen-rss-count.py`, use:
 ```
 $ python count-amc.py PATH --epsilon E --delta D
 ```
 for obtaining an (epsilon,delta)-approximation of the exact RS count.
+
+Alternative solvers can be used analogously.  Exact solvers include
+[pyeda](https://pyeda.readthedocs.io/en/latest/) and
+[pysdd](https://github.com/wannesm/PySDD).
 
 
 <h1 class="heading blue"><a name="license">License</a></h1>
