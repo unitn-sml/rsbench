@@ -99,9 +99,9 @@ mitigation of reasoning shortcuts." NeurIPS 2023.</span>
 TODO: how to train a NeSy model and how to evaluate performance.  link to jupyter notebook?
 
 
-# Facts of MNISTMath
+# MNISTMath
 
-<img src="assets/images/rsbench-mnmath.png" alt="mnmath" width="100%" height="auto">
+<img src="assets/images/rsbench-mnmath.png" alt="mnmath" width="80%" height="auto">
 
 WRITEME
 
@@ -112,14 +112,14 @@ WRITEME
 
 # MNISTLogic
 
-TODO: add figure
+<img src="assets/images/rsbench-mnmath.png" alt="mnmath" width="80%" height="auto">
 
 WRITEME
 
 
 # Kand-Logic
 
-TODO: add figure
+<img src="assets/images/rsbench-kandlogic.png" alt="mnmath" width="80%" height="auto">
 
 WRITEME
 
