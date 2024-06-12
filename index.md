@@ -33,7 +33,7 @@ neural and neuro-symbolic models is a far-from-solved problem.
 
 <h1 class="heading blue"><a name="background">What is a Reasoning Shortcut?</a></h1>
 
-<img src="/assets/images/reasoning-shortctut.png" alt="a reasoning shortcut" width="100%" height="auto">
+<img src="https://github.com/unitn-sml/rsbench/blob/master/assets/images/reasoning-shortcut.png" alt="a reasoning shortcut" width="100%" height="auto">
 
 **What are L&R tasks?**  In learning and reasoning tasks, machine learning
 models should predict labels that comply with prior knowledge.  For instance,
