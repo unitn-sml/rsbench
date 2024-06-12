@@ -28,8 +28,6 @@ neural and neuro-symbolic models is a far-from-solved problem.
 
 ### **Data**: [GDrive](https://todo), [Zenodo](https://todo)
 
-### **Preprint**: [ArXiV](https://arxiv.org)
-
 
 <h1 class="heading blue"><a name="background">What is a Reasoning Shortcut?</a></h1>
 
