@@ -153,3 +153,8 @@ WRITEME
 <h1 class="heading blue"><a name="verification">Verification</a></h1>
 
 TODO: @Paolo
+
+
+<h1 class="heading blue"><a name="license">License</a></h1>
+
+TODO: @Samuele, copy from the paper
