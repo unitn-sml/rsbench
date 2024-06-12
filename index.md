@@ -24,7 +24,7 @@ Using rsbench, we highlight that obtaining high quality concepts in both purely
 neural and neuro-symbolic models is a far-from-solved problem.
 
 
-<h1 class="heading blue"><a name="downloads">Downloads</a></h1>
+<h1><a name="downloads">Downloads</a></h1>
 
 ### **Data**: [GDrive](https://todo), [Zenodo](https://todo)
 
@@ -57,7 +57,7 @@ al.* "Not all neuro-symbolic concepts are created equal: Analysis and
 mitigation of reasoning shortcuts." NeurIPS 2023.</span>
 
 
-<h1 class="heading blue"><a name="overview">Overview</a></h1>
+<h1><a name="overview">Overview</a></h1>
 
 - *A Variety of L&R Tasks*: rsbench offers five L&R tasks and at least one data
   set each.  The tasks come in different flavors -- *arithmetic*, *logic*, and
@@ -93,7 +93,7 @@ mitigation of reasoning shortcuts." NeurIPS 2023.</span>
 | `SDD-OIA`       | 469 x 387    | 21 binary concepts                                                   | binary multilabel, 4 labels | 6,820  | 1,464  | 1,464  | 1,000  |
 
 
-<h1 class="heading blue"><a name="usage">Usage</a></h1>
+<h1><a name="usage">Usage</a></h1>
 
 TODO: how to train a NeSy model and how to evaluate performance.  link to jupyter notebook?
 
@@ -144,12 +144,12 @@ WRITEME
 WRITEME
 
 
-<h1 class="heading blue"><a name="evaluation">Evaluation</a></h1>
+<h1><a name="evaluation">Evaluation</a></h1>
 
 WRITEME
 
 
-<h1 class="heading blue"><a name="verification">Verification</a></h1>
+<h1><a name="verification">Verification</a></h1>
 
 `count-rss` is a small tool that is able to enumerate the RSs in a task by
 reducing the task to model counting (`#SAT`).  In short, `count-rss` takes a
@@ -199,7 +199,7 @@ for obtaining an (epsilon,delta)-approximation of the exact RS count.
 [pysdd](https://github.com/wannesm/PySDD).</p>
 
 
-<h1 class="heading blue"><a name="license">License</a></h1>
+<h1><a name="license">License</a></h1>
 
 **Code**: Most of our code is distributed under the [BSD
 3](https://opensource.org/license/bsd-3-clause) license.  The `CLE4EVR` and
