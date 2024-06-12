@@ -199,6 +199,19 @@ $ python count-amc.py PATH --epsilon E --delta D
 ```
 for obtaining an (epsilon,delta)-approximation of the exact RS count.
 
+
 <h1 class="heading blue"><a name="license">License</a></h1>
 
-TODO: @Samuele, copy from the paper
+**Code**: Most of our code is distributed under the [BSD
+3](https://opensource.org/license/bsd-3-clause) license.  The `CLE4EVR` and
+`SDDOIA` generators are derived from the `CLEVR` code base, which is
+distributed under the permissive BSD license.  The `Kand-Logic` generator is
+based on the `Kandinsky-patterns` code, which is available under the
+[GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) license, and so is our
+generator.
+
+**Data**: All ready-made data sets and generated datasets are distributed under
+the [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+license, with the exception of `Kand-Logic`, which is derived from
+`Kandinsky-patterns` and as such is distributed under the
+[GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
