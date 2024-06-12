@@ -62,8 +62,9 @@ mitigation of reasoning shortcuts." NeurIPS 2023.</span>
 <h1 class="heading blue"><a name="overview">Overview</a></h1>
 
 - *A Variety of L&R Tasks*: rsbench offers five L&R tasks and at least one data
-  set each.  The tasks come in differet flavous: arithmetic, logic, and
-  high-stakes.  It also provides data generators for creating new OOD splits
+  set each.  The tasks come in different flavors -- *arithmetic*, *logic*, and
+  *high-stakes* -- and with a formal specification of the corresponding prior
+  knowledge.  rsbench also provides data generators for creating new OOD splits
   useful for testing the down-stream consequences of RSs.
 
 - *Evaluation*: rsbench comes with implementations for several metrics for
