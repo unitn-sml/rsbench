@@ -1,6 +1,6 @@
 ---
 layout: default
-title: rsbench: A Benchmark Suite for Systematically Evaluating Reasoning Shortcuts
+title: rsbench A Benchmark Suite for Systematically Evaluating Reasoning Shortcuts
 ---
 
 {% include header.html %}
@@ -54,7 +54,7 @@ vehicle is authorized to cross over `red_light`s in the case of an emergency,
 and it confuses these with `pedestrian`s, this might lead to harmful
 decisions).
 
-<span style="font-size:0.8em;">Image taken with permission from: Marconato *et
+<span style="font-size:0.7em;">Image taken with permission from: Marconato *et
 al.* "Not all neuro-symbolic concepts are created equal: Analysis and
 mitigation of reasoning shortcuts." NeurIPS 2023.</span>
 
@@ -154,11 +154,11 @@ WRITEME
 <h1 class="heading blue"><a name="verification">Verification</a></h1>
 
 `count-rss` is a small tool that is able to enumerate the RSs in a task by
-reducing the task to model counting (\#SAT).  In short, `count-rss` takes a
-DIMACS CNF specification of the prior knowledge and a data set, and outputs a
-DIMACS CNF specification of the RS counting problem, which can be fed to any
-\#SAT solver. Due to their large number even on seemingly simple tasks, we
-suggest using the state-of-the-art approximate \#SAT solver
+reducing the task to model counting (`\#SAT`).  In short, `count-rss` takes a
+`DIMACS CNF` specification of the prior knowledge and a data set, and outputs a
+`DIMACS CNF` specification of the RS counting problem, which can be fed to any
+`\#SAT` solver. Due to their large number even on seemingly simple tasks, we
+suggest using the state-of-the-art approximate `\#SAT` solver
 [ApproxMC](https://github.com/meelgroup/approxmc).
 
 
@@ -166,45 +166,39 @@ suggest using the state-of-the-art approximate \#SAT solver
 
 Use `python gen-rss-count.py` for generating a DIMACS encoding of the counting task.
 
-On small datasets/tasks, the count of RSs can be computed directly (and exactly) with the `-E` flag.
-For instance:
-```
-$ python gen-rss-count.py xor -n 3 -E
-```
+<p>On small datasets/tasks, the count of RSs can be computed directly (and exactly) with the `-E` flag. For instance:</p>
+
+<code class="code-block">$ python gen-rss-count.py xor -n 3 -E</code>
+
 computes all the RSs resulting from the XOR task on 3 variables with exhaustive supervision.
 
-Partial/incomplete supervision can be controlled with `-d P` with P in [0,1].
-For instance:
-```
-$ python gen-rss-count.py xor -n 3 -E -d 0.25
-```
-computes all the RSs when only 1/4 (i.e. 2 examples) are provided.
-The optional `--seed`  argument sets the seed number.
+<p>Partial/incomplete supervision can be controlled with `-d P` with `P` in `[0,1]`. For instance:</p>
 
-Beyond illustrative the XOR case, random CNFs with N variables, M clauses of length K can be evaluated:
-```
-$ python gen-rss-count.py random -n N -m M -k K
-```
+<code class="code-block">$ python gen-rss-count.py xor -n 3 -E -d 0.25</code>
 
-Custom task expressed in DIMACS format are supported, for instance:
-```
-$ python gen-rss-count.py cnf and.cnf
-```
+<p>computes all the RSs when only 1/4 (i.e. 2 examples) are provided. The optional `--seed`  argument sets the seed number.</p>
+
+<p>Beyond illustrative the XOR case, random CNFs with `N` variables, `M` clauses of length `K` can be evaluated:</p>
+
+<code class="code-block">$ python gen-rss-count.py random -n N -m M -k K</code>
+
+Custom task expressed in `DIMACS` format are supported, for instance:
+
+<code class="code-block">$ python gen-rss-count.py cnf and.cnf</code>
 
 Use the flag `-h` for help on additional arguments.
-
 
 ## Counting RSs with pyapproxmc
 
 Once the encoding of the problem is generated with `gen-rss-count.py`, use:
-```
-$ python count-amc.py PATH --epsilon E --delta D
-```
+
+<code class="code-block">$ python count-amc.py PATH --epsilon E --delta D</code>
+
 for obtaining an (epsilon,delta)-approximation of the exact RS count.
 
-Alternative solvers can be used analogously.  Exact solvers include
+<p>Alternative solvers can be used analogously.  Exact solvers include
 [pyeda](https://pyeda.readthedocs.io/en/latest/) and
-[pysdd](https://github.com/wannesm/PySDD).
+[pysdd](https://github.com/wannesm/PySDD).</p>
 
 
 <h1 class="heading blue"><a name="license">License</a></h1>
