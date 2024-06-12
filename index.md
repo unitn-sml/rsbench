@@ -125,7 +125,21 @@ output `5`.
 
 <img src="assets/images/rsbench-mnlogic.png" alt="mnlogic" width="80%" height="auto">
 
-WRITEME
+RSs arise whenever the knowledge K allows deducing the right label from
+multiple configurations of concepts. This form of non-injectivity is a standard
+feature of most logic formulas, and in fact formulas as simple as the XOR are
+riddled by RSs. `MNLogic` allows to probe the pervasiveness of RSs in random
+logic formulas. Specifically, the input image is the concatenation of k MNIST
+images of zeros and ones representing the truth value of k bits, and the
+ground-truth label y is whether they satisfies the formula or not.
+
+By default, the `MNLogic` assumes the formula is a k-bit XOR, but any other
+formula can be supplied. rsbench provides code to generate random CNF formulas,
+that is, random conjunctions of disjunctions (clauses) of k bits. The code
+allows to control the number of bits k and the number of structure of the
+random formula, that is, the number of clauses and their length. It also avoids
+trivial data by ensuring each clauses is neither a tautology nor a
+contradiction.
 
 
 # Kand-Logic
