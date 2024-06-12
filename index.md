@@ -24,14 +24,14 @@ Using rsbench, we highlight that obtaining high quality concepts in both purely
 neural and neuro-symbolic models is a far-from-solved problem.
 
 
-# Links
+<h1 class="heading blue"><a name="downloads">Downloads</a></h1>
 
 ### **Data**: [GDrive](https://todo), [Zenodo](https://todo)
 
 ### **Preprint**: [ArXiV](https://arxiv.org)
 
 
-# What is a Reasoning Shortcut?
+<h1 class="heading blue"><a name="background">What is a Reasoning Shortcut?</a></h1>
 
 TODO: add BEARS or NeurIPS figure 2.
 
@@ -53,23 +53,19 @@ because these show that `red_light`s are responsible for the predictions, while
 in fact this depends on the presence of red lights
 
 
-# Key Features
+<h1 class="heading blue"><a name="overview">Overview</a></h1>
+
+rsbench supplies several *data sets* for 5 learning and reasoning (L&R) tasks.
+It also provides *data generators* for creating additional data splits.  WRITEME
 
 - *A Variety of L&R Tasks*: WRITEME different types of input and flavours of
   knowledge.  Support for OOD splits.
 
-- *Evaluation*:
+- *Evaluation*: WRITEME
 
-- *Verification*:
+- *Verification*: WRITEME
 
-- *Example code*:
-
-
-# Overview
-
-rsbench supplies several *data sets* for 5 learning and reasoning (L&R) tasks.
-It also provides *data generators* for creating additional data splits.  
-
+- *Example code*: WRITEME
 
 | L&R Task        | Images       | Concepts                                                             | Labels                      | #Train | #Valid | #Test  | #OOD   |
 | :--             | :--:         | :--:                                                                 | :--:                        | :--:   | :--:   | :--:   | :--:   |
@@ -83,7 +79,7 @@ It also provides *data generators* for creating additional data splits.
 | `SDD-OIA`       | 469 x 387    | 21 binary concepts                                                   | binary multilabel, 4 labels | 6,820  | 1,464  | 1,464  | 1,000  |
 
 
-# How To Use rsbench
+<h1 class="heading blue"><a name="usage">Usage</a></h1>
 
 TODO: how to train a NeSy model and how to evaluate performance.  link to jupyter notebook?
 
@@ -134,11 +130,11 @@ TODO: add figure
 WRITEME
 
 
-# Evaluation
+<h1 class="heading blue"><a name="evaluation">Evaluation</a></h1>
 
 WRITEME
 
 
-# Verification
+<h1 class="heading blue"><a name="verification">Verification</a></h1>
 
 TODO: @Paolo
