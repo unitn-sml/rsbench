@@ -102,7 +102,19 @@ TODO: how to train a NeSy model and how to evaluate performance.  link to jupyte
 
 <img src="assets/images/rsbench-mnmath.png" alt="mnmath" width="80%" height="auto">
 
-WRITEME
+`MNMath` is a novel multi-label extension of `MNIST-Addition` [Manhaeve et al.,
+2018](https://proceedings.neurips.cc/paper_files/paper/2018/hash/dc5d637ed5e62c36ecb73b654b05ba2a-Abstract.html)
+in which the goal is to predict the result of a system of equations of
+[MNIST](http://yann.lecun.com/exdb/mnist/) digits.  The input image is the
+concatentation of all MNIST digits appearing in the system, and the output is a
+vector with as many elements as equations. Models trained on this task can
+learn to systematically extract the wrong digits from the input image.
+
+**An example RS**:  For the (linear) system in the example above, a model can
+confuse 3's with 4's and still perfectly predict the output of the system.
+However, for a new, out-of-distribution task like `2 + 4`, it will wrongly
+output `5`.
+
 
 **Ready-made**: `MNAdd-Half` WRITEME
 
