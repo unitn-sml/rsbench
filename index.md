@@ -100,7 +100,7 @@ mitigation of reasoning shortcuts." NeurIPS 2023.</span>
 TODO: how to train a NeSy model and how to evaluate performance.  link to jupyter notebook?
 
 
-# MNISTMath
+# MNMath
 
 <img src="assets/images/rsbench-mnmath.png" alt="mnmath" width="80%" height="auto">
 
@@ -111,37 +111,37 @@ WRITEME
 **Ready-made**: `MNAdd-EvenOdd` WRITEME
 
 
-# MNISTLogic
+# MNLogic
 
-<img src="assets/images/rsbench-mnmath.png" alt="mnmath" width="80%" height="auto">
+<img src="assets/images/rsbench-mnlogic.png" alt="mnlogic" width="80%" height="auto">
 
 WRITEME
 
 
 # Kand-Logic
 
-<img src="assets/images/rsbench-kandlogic.png" alt="mnmath" width="80%" height="auto">
+<img src="assets/images/rsbench-kandlogic.png" alt="kandlogic" width="80%" height="auto">
 
 WRITEME
 
 
 # CLE4EVR
 
-TODO: add figure
+<img src="assets/images/rsbench-cle4evr.png" alt="cle4evr" width="80%" height="auto">
 
 WRITEME
 
 
 # BDD-OIA
 
-TODO: add figure
+<img src="assets/images/rsbench-bddoia.png" alt="bddoia" width="80%" height="auto">
 
 WRITEME
 
 
 # SDD-OIA
 
-TODO: add figure
+<img src="assets/images/rsbench-sddoia.png" alt="sddoia" width="80%" height="auto">
 
 WRITEME
 
