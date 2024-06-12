@@ -35,6 +35,8 @@ neural and neuro-symbolic models is a far-from-solved problem.
 
 TODO: add BEARS or NeurIPS figure 2.
 
+![test](assets/images/logo-sml.png)
+
 **What are L&R tasks?**  In learning and reasoning tasks, machine learning
 models should predict labels that comply with prior knowledge.  For instance,
 in autonomous vehicle scenario, the model should predict `stop` or `go` based
