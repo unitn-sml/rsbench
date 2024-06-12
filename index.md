@@ -154,11 +154,11 @@ WRITEME
 <h1 class="heading blue"><a name="verification">Verification</a></h1>
 
 `count-rss` is a small tool that is able to enumerate the RSs in a task by
-reducing the task to model counting (`\#SAT`).  In short, `count-rss` takes a
+reducing the task to model counting (`#SAT`).  In short, `count-rss` takes a
 `DIMACS CNF` specification of the prior knowledge and a data set, and outputs a
 `DIMACS CNF` specification of the RS counting problem, which can be fed to any
 `\#SAT` solver. Due to their large number even on seemingly simple tasks, we
-suggest using the state-of-the-art approximate `\#SAT` solver
+suggest using the state-of-the-art approximate `#SAT` solver
 [ApproxMC](https://github.com/meelgroup/approxmc).
 
 
