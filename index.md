@@ -54,6 +54,10 @@ vehicle is authorized to cross over `red_light`s in the case of an emergency,
 and it confuses these with `pedestrian`s, this might lead to harmful
 decisions).
 
+<span style="font-size:0.5em;">Image taken with permission from: Marconato *et
+al.* "Not all neuro-symbolic concepts are created equal: Analysis and
+mitigation of reasoning shortcuts." NeurIPS 2023.</span>
+
 
 <h1 class="heading blue"><a name="overview">Overview</a></h1>
 
