@@ -26,7 +26,7 @@ neural and neuro-symbolic models is a far-from-solved problem.
 
 <h1><a name="downloads">Downloads</a></h1>
 
-### **Data**: [GDrive](https://drive.google.com/drive/folders/1PB4FZrZ_iZ_XH28u-nAykkVqMLDYqACB), [Zenodo](https://todo), [Metadata](https://todo)
+### **Data**: [GDrive](https://drive.google.com/drive/folders/1PB4FZrZ_iZ_XH28u-nAykkVqMLDYqACB), [Zenodo](https://zenodo.org/doi/10.5281/zenodo.11612555)
 
 ### **Codebase**: [GitHub](https://github.com/unitn-sml/rsbench-code)
 
@@ -234,6 +234,15 @@ for obtaining an (epsilon,delta)-approximation of the exact RS count.
 [pyeda](https://pyeda.readthedocs.io/en/latest/) and
 [pysdd](https://github.com/wannesm/PySDD).</p>
 
+<h1><a name="metadata">Metadata</a></h1>
+
+A preliminary metadata for the datasets we prove in the `Zenodo` archive and `Google Drive` is listed here:
+
+- [`bbox_kand_logic`](assets/metadata/bbox_kand_logic_croissant.json)
+- [`clip_embeddings`](assets/metadata/clip_embeddings_croissant.json)
+- [`kand_logic_croissant`](assets/metadata/kand_logic_croissant.json)
+- [`sdd_oia`](assets/metadata/sddoia_croissant.json)
+- [`sdd_oia_embeddings`](assets/metadata/sddoia_embeddings_croissant.json)
 
 <h1><a name="license">License</a></h1>
 
