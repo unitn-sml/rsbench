@@ -228,15 +228,14 @@ Once the encoding of the problem is generated with `gen-rss-count.py`, use:
 
 <code class="code-block">$ python count-amc.py PATH --epsilon E --delta D</code>
 
-for obtaining an (epsilon,delta)-approximation of the exact RS count.
+<p>for obtaining an (epsilon,delta)-approximation of the exact RS count.</p>
 
-<p>Alternative solvers can be used analogously.  Exact solvers include
-[pyeda](https://pyeda.readthedocs.io/en/latest/) and
-[pysdd](https://github.com/wannesm/PySDD).</p>
+Alternative solvers can be used analogously.  Exact solvers include [`pyeda`](https://pyeda.readthedocs.io/en/latest/) and
+[`pysdd`](https://github.com/wannesm/PySDD).
 
 <h1><a name="metadata">Metadata</a></h1>
 
-A preliminary metadata for the datasets we prove in the `Zenodo` archive and `Google Drive` is listed here:
+Preliminary metadata for the datasets we prove in the `Zenodo` archive and `Google Drive` is listed here:
 
 - [`bbox_kand_logic`](assets/metadata/bbox_kand_logic_croissant.json)
 - [`clip_embeddings`](assets/metadata/clip_embeddings_croissant.json)
