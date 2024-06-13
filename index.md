@@ -158,31 +158,56 @@ contradiction.
 
 <img src="assets/images/rsbench-kandlogic.png" alt="kandlogic" width="80%" height="auto">
 
-This task, inspired by Wassily Kandinsky's paintings and [Mueller and Holzinger 2021](https://www.sciencedirect.com/science/article/pii/S0004370221000977) requires simple (but non-trivial) perceptual processing and relatively complex reasoning in classifying logical patterns on sets of images comprising different shapes and colors. For example,
-each input can comprise two $$64 \times 64$$ images, i.e., $$x = (x_1, x_2)$$, each depicting three geometric primitives with different shapes (`square`, `triangle`, `circle`) and colors (`red`, `blue`, `yellow`). The goal is to predict whether $$x_1$$ and $$x_2$$ fit the same predefined logical pattern or not. The pattern is built out of predicates like `all primitives in the image have a different color`, `all primitives have the same color`, and `exactly two primitives have the same shape`.
+This task, inspired by Wassily Kandinsky's paintings and [Mueller and Holzinger 2021](https://www.sciencedirect.com/science/article/pii/S0004370221000977) requires simple (but non-trivial) perceptual processing and relatively complex reasoning in classifying logical patterns on sets of images comprising different shapes and colors. For example, each input can comprise two $64 \times 64$ images, i.e., $x = (x_1, x_2)$, each depicting three geometric primitives with different shapes (`square`, `triangle`, `circle`) and colors (`red`, `blue`, `yellow`). The goal is to predict whether $x_1$ and $x_2$ fit the same predefined logical pattern or not. The pattern is built out of predicates like `all primitives in the image have a different color`, `all primitives have the same color`, and `exactly two primitives have the same shape`.
 
-Unlike `MNLogic`, in `Kand-Logic` each primitive has multiple attributes that cannot easily be processed separately.  This means that RSs can easily appear, e.g., confuse shape with color when either is sufficient to entail the right prediction, as in the example above. We provide the data set used in [Marconato et al. 2024](https://arxiv.org/abs/2402.12240) ($$3$$ images per input with $$3$$ primitives each) and a generator that allows configuring the number of images and primitives per input and the pattern itself.
+Unlike `MNLogic`, in `Kand-Logic` each primitive has multiple attributes that cannot easily be processed separately.  This means that RSs can easily appear, e.g., confuse shape with color when either is sufficient to entail the right prediction, as in the example above. We provide the data set used in [Marconato et al. 2024](https://arxiv.org/abs/2402.12240) ($3$ images per input with $3$ primitives each) and a generator that allows configuring the number of images and primitives per input and the pattern itself.
 
 
 # CLE4EVR
 
 <img src="assets/images/rsbench-cle4evr.png" alt="cle4evr" width="80%" height="auto">
 
-WRITEME
+
+``CLE4EVR``  focuses on logical reasoning over three-dimensional scenes, inspired by ``CLEVR`` [Johnson et al.](https://cs.stanford.edu/people/jcjohns/clevr/) and  ``CLEVR-HANS`` [Stammer et al.](https://github.com/ml-research/CLEVR-Hans).
+
+Each input image $x$, of size $240 \times 320$, contains a variable number of objects differing in size ($3$ possible values), shape ($10$), color ($10$), material ($2$), position (real), and rotation (real), and the goal is to determine whether the objects satisfy a pre-specified rule that depends on all discrete attributes of the objects in the scene. Example of shapes are ``sphere``, ``pyramid``, and ``diamonds``.
+
+The default knowledge $\mathsf K$ is designed to induce Reasoning Shortcuts: it asserts that an image $x$ is positive iff at least two objects $x_i$ and $x_j$ have the same color and shape, _i.e._, $\exists i \ne j \ . \ ({\tt sha}(x_i) = {\tt sha}(x_j)) \land ({\tt col}(x_i) = {\tt col}(x_j))$. Reasoning Shortcuts, include confusing one shape for one another, or confusing colors for shapes and vice versa. For example, a model may associate ``red pyramid`` to ``gray sphere`` while yielding perfect task accuracy.
+
+The generator allows to customize the number of objects per image, the knowledge, and whether occlusion is allowed.
+
+
+
 
 
 # BDD-OIA
 
 <img src="assets/images/rsbench-bddoia.png" alt="bddoia" width="80%" height="auto">
 
-WRITEME
+``BDD-OIA`` [Xu et al.](https://twizwei.github.io/bddoia_project/) is a multi-label autonomous driving task for studying RSs in real-world, _high-stakes_ scenarios.
+The goal is to infer what actions out of $\{ {\tt forward}, {\tt stop}, {\tt left}, {\tt right} \}$ are safe depending on what objects (_e.g._, cars, traffic signs) are present in an input dashcam image.
+
+Input images, of size $720 \times 1280$, come with concept-level annotations, making it possible to assess the quality of the learned concepts.  The dataset comprises $16,082$ training examples, $2,270$ validation examples and $4,572$ test examples.
+
+The knowledge $\mathsf K$ establishes that, _e.g._, it is not safe to move $\tt forward$ if there are pedestrians on the road, based on a set of $21$ binary concepts indicating the presence of different obstacles on the road.
+The constraints specify conditions for being able to proceed (${\tt green\_light} \lor {\tt follow} \lor {\tt clear} \Rightarrow {\tt forward}$), stop (${\tt red\_light} \lor {\tt stop\_sign} \lor {\tt obstacle} \Rightarrow {\tt stop}$), and for turning left and right, as well as relationships between actions (like ${\tt stop} \Rightarrow \lnot {\tt forward}$). 
+
+Common Reasoning Shortcuts allow to, for example confuse ${\tt pedestrians}$ with ${\tt red\_light}$ s, as they both imply the correct $ {\tt stop}$  action for all training examples.
 
 
 # SDD-OIA
 
 <img src="assets/images/rsbench-sddoia.png" alt="sddoia" width="80%" height="auto">
 
-WRITEME
+``SDD-OIA`` is a synthetic replacement for ``BDD-OIA`` that comes with a fully configurable _{data generator}_, enabling fine-grained control over what labels, concepts, and images are observed and the creation of OOD splits.
+In short, ``SDD-OIA`` shares the same classes, concepts and (by default) knowledge as ``BDD-OIA``, but the images are 3D traffic scenes modelled and rendered using Blender as $469 \times 387$ RGB images.
+
+Images are generated by first sampling a desired label $\mathbf y$, then picking concepts $\mathbf c$ that yield that label, and then rendering an image $\mathbf x$ displaying those concepts.  This allows to easily control what concepts and labels should appear in all data splits, which in turn determine what kinds of RSs can be learned. The dataset we propose contains overall $6820$ training examples, $1464$ validation examples, and $1464$ test examples. Reasoning Shortcuts learned in this task rensemble those in ``BDD-OIA``.
+
+We also include a OOD test scenario, where the knowledge changes including a new exception under emergency case, this includes in total $1000$ examples. 
+Here, the vehicle is allowed to cross red lights in case of an ${\tt emergency}$. Formally, this alterates the label predictions where the new ${\tt emergency}$ variable that conditions the traffic rules, that is, $(\lnot {\tt emergency} \implies \text{original rule for {\tt stop}}) \land (\lnot {\tt emergency} \implies \text{alternative rule for {\tt stop}})$, and similarly for ${\tt turn\_left}$ and ${\tt turn\_right}$.  
+
+``SDD-OIA`` comes with its generator, allowing to test different cases and creationg variations of other OOD scenarios can be created.
 
 
 <h1><a name="verification">Verification</a></h1>
