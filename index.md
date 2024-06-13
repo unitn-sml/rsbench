@@ -240,7 +240,6 @@ Alternative solvers can be used analogously.  Exact solvers include [`pyeda`](ht
 Preliminary metadata for the datasets we provide in the `Zenodo` archive and `Google Drive` is listed here:
 
 - [`bbox_kand_logic`](assets/metadata/bbox_kand_logic_croissant.json)
-- [`clip_embeddings`](assets/metadata/clip_embeddings_croissant.json)
 - [`kand_logic_croissant`](assets/metadata/kand_logic_croissant.json)
 - [`sdd_oia`](assets/metadata/sddoia_croissant.json)
 - [`sdd_oia_embeddings`](assets/metadata/sddoia_embeddings_croissant.json)
