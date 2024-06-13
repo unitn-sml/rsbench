@@ -161,7 +161,7 @@ contradiction.
 This task, inspired by Wassily Kandinsky's paintings and [Mueller and Holzinger 2021](https://www.sciencedirect.com/science/article/pii/S0004370221000977) requires simple (but non-trivial) perceptual processing and relatively complex reasoning in classifying logical patterns on sets of images comprising different shapes and colors. For example,
 each input can comprise two $$64 \times 64$$ images, i.e., $$x = (x_1, x_2)$$, each depicting three geometric primitives with different shapes (`square`, `triangle`, `circle`) and colors (`red`, `blue`, `yellow`). The goal is to predict whether $$x_1$$ and $$x_2$$ fit the same predefined logical pattern or not. The pattern is built out of predicates like `all primitives in the image have a different color`, `all primitives have the same color`, and `exactly two primitives have the same shape`.
 
-Unlike `MNLogic`, in `Kand-Logic` each primitive has multiple attributes that cannot easily be processed separately.  This means that RSs can easily appear, e.g., confuse shape with color when either is sufficient to entail the right prediction, as in the example above. We provide the data set used in [Marconato et al. 2024](https://arxiv.org/abs/2402.12240) ($$3$$ images per input with $$3$$ primitives each) and a generator that allows configuring the number of images and primitives per input and the pattern itself.
+Unlike `MNLogic`, in `Kand-Logic` each primitive has multiple attributes that cannot easily be processed separately.  This means that RSs can easily appear, e.g., confuse shape with color when either is sufficient to entail the right prediction, as in the example above. We provide the data set used in [Marconato et al. 2024](https://arxiv.org/abs/2402.12240) (3 images per input with 3 primitives each) and a generator that allows configuring the number of images and primitives per input and the pattern itself.
 
 
 # CLE4EVR
@@ -191,7 +191,7 @@ WRITEME
 reducing the task to model counting (`#SAT`).  In short, `count-rss` takes a
 `DIMACS CNF` specification of the prior knowledge and a data set, and outputs a
 `DIMACS CNF` specification of the RS counting problem, which can be fed to any
-`\#SAT` solver. Due to their large number even on seemingly simple tasks, we
+`#SAT` solver. Due to their large number even on seemingly simple tasks, we
 suggest using the state-of-the-art approximate `#SAT` solver
 [ApproxMC](https://github.com/meelgroup/approxmc).
 
@@ -200,19 +200,21 @@ suggest using the state-of-the-art approximate `#SAT` solver
 
 Use `python gen-rss-count.py` for generating a DIMACS encoding of the counting task.
 
-<p>On small datasets/tasks, the count of RSs can be computed directly (and exactly) with the `-E` flag. For instance:</p>
+On small datasets/tasks, the count of RSs can be computed directly (and exactly) with the `-E` flag. 
+For instance:
 
 <code class="code-block">$ python gen-rss-count.py xor -n 3 -E</code>
 
 computes all the RSs resulting from the XOR task on 3 variables with exhaustive supervision.
 
-<p>Partial/incomplete supervision can be controlled with `-d P` with `P` in `[0,1]`. For instance:</p>
+Partial/incomplete supervision can be controlled with `-d P` with `P` in `[0,1]`. For instance:
 
 <code class="code-block">$ python gen-rss-count.py xor -n 3 -E -d 0.25</code>
 
-<p>computes all the RSs when only 1/4 (i.e. 2 examples) are provided. The optional `--seed`  argument sets the seed number.</p>
+computes all the RSs when only 1/4 (<it>i.e.</it> 2 examples) are provided. The optional `--seed`  argument sets the seed number.
 
-<p>Beyond illustrative the XOR case, random CNFs with `N` variables, `M` clauses of length `K` can be evaluated:</p>
+
+Beyond illustrative the XOR case, random CNFs with `N` variables, `M` clauses of length `K` can be evaluated:
 
 <code class="code-block">$ python gen-rss-count.py random -n N -m M -k K</code>
 
@@ -228,14 +230,14 @@ Once the encoding of the problem is generated with `gen-rss-count.py`, use:
 
 <code class="code-block">$ python count-amc.py PATH --epsilon E --delta D</code>
 
-<p>for obtaining an (epsilon,delta)-approximation of the exact RS count.</p>
+for obtaining an (epsilon,delta)-approximation of the exact RS count.
 
 Alternative solvers can be used analogously.  Exact solvers include [`pyeda`](https://pyeda.readthedocs.io/en/latest/) and
 [`pysdd`](https://github.com/wannesm/PySDD).
 
 <h1><a name="metadata">Metadata</a></h1>
 
-Preliminary metadata for the datasets we prove in the `Zenodo` archive and `Google Drive` is listed here:
+Preliminary metadata for the datasets we provide in the `Zenodo` archive and `Google Drive` is listed here:
 
 - [`bbox_kand_logic`](assets/metadata/bbox_kand_logic_croissant.json)
 - [`clip_embeddings`](assets/metadata/clip_embeddings_croissant.json)
