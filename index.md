@@ -146,7 +146,10 @@ contradiction.
 
 <img src="assets/images/rsbench-kandlogic.png" alt="kandlogic" width="80%" height="auto">
 
-WRITEME
+This task, inspired by Wassily Kandinsky's paintings and [Mueller and Holzinger 2021](https://www.sciencedirect.com/science/article/pii/S0004370221000977) requires simple (but non-trivial) perceptual processing and relatively complex reasoning in classifying logical patterns on sets of images comprising different shapes and colors. For example,
+each input can comprise two $$64 \times 64$$ images, i.e., $$x = (x_1, x_2)$$, each depicting three geometric primitives with different shapes (`square`, `triangle`, `circle`) and colors (`red`, `blue`, `yellow`). The goal is to predict whether $$x_1$$ and $$x_2$$ fit the same predefined logical pattern or not. The pattern is built out of predicates like `all primitives in the image have a different color`, `all primitives have the same color`, and `exactly two primitives have the same shape`.
+
+Unlike `MNLogic`, in `Kand-Logic` each primitive has multiple attributes that cannot easily be processed separately.  This means that RSs can easily appear, e.g., confuse shape with color when either is sufficient to entail the right prediction, as in the example above. We provide the data set used in [Marconato et al. 2024](https://arxiv.org/abs/2402.12240) ($$3$$ images per input with $$3$$ primitives each) and a generator that allows configuring the number of images and primitives per input and the pattern itself.
 
 
 # CLE4EVR
