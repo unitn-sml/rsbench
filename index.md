@@ -84,14 +84,14 @@ mitigation of reasoning shortcuts." NeurIPS 2023.</span>
 
 | L&R Task        | Images       | Concepts                                                             | Labels                      | #Train | #Valid | #Test  | #OOD   |
 | :--             | :--:         | :--:                                                                 | :--:                        | :--:   | :--:   | :--:   | :--:   |
-| `MNMath`        | 28k x 28     | k digits, 10 values each                                             | categorical multilabel      | custom | custom | custom | custom |
-| `MNAdd-Half`    | 56 x 28      | 2 digits, 10 values each                                             | categorical 0 ... 18        | 2,940  | 840    | 420    | 1,080  |
-| `MNAdd-EvenOdd` | 56 x 28      | 2 digits, 10 values each                                             | categorical 0 ... 18        | 6,720  | 1,920  | 960    | 5,040  |
-| `MNLogic`       | 28k x 28     | k digits, 10 values each                                             | binary                      | custom | custom | custom | custom |
-| `Kand-Logic`    | 3 x 192 x 64 | 3 objects per image, 3 shapes, 3 colors                              | binary                      | 4,000  | 1,000  | 1,000  | -      |
-| `CLE4EVR`       | 320 x 240    | n to m objects per image, 10 shapes, 10 colors, 2 materials, 3 sizes | binary                      | custom | custom | custom | custom |
-| `BDD-OIA`       | 1280 x 720   | 21 binary concepts                                                   | binary multilabel, 4 labels | 16,082 | 2,270  | 4,572  | --     |
-| `SDD-OIA`       | 469 x 387    | 21 binary concepts                                                   | binary multilabel, 4 labels | 6,820  | 1,464  | 1,464  | 1,000  |
+| `MNMath`        | $28k \times 28$     | $k$ digits, $10$ values each                                             | categorical multilabel      | custom | custom | custom | custom |
+| `MNAdd-Half`    | $56 \times 28$      | $2$ digits, $10$ values each                                             | categorical $0 \dots 18$       | $2,940$ | $840$    | $420$    | $1,080$  |
+| `MNAdd-EvenOdd` | $56 \times 28$      | $2$ digits, $10$ values each                                             | categorical $0 \dots 18$        | $6,720$  | $1,920$  | $960$    | $5,040$  |
+| `MNLogic`       | $28k \times 28$     | $k$ digits, $10$ values each                                             | binary                      | custom | custom | custom | custom |
+| `Kand-Logic`    | $3 \times 192 \times 64$ | $3$ objects per image, $3$ shapes, $3$ colors                              | binary                      | $4,000$  | $1,000$  | $1,000$  | -      |
+| `CLE4EVR`       | $320 \times 240$    | $n$ to $m$ objects per image, $10$ shapes, $10$ colors, $2$ materials, $3$ sizes | binary                      | custom | custom | custom | custom |
+| `BDD-OIA`       | $1280 \times 720$   | $21$ binary concepts                                                   | binary multilabel, $4$ labels | $16,082$ | $2,270$  | $4,572$  | --     |
+| `SDD-OIA`       | $469 \times 387$    | $21$ binary concepts                                                   | binary multilabel, $4$ labels | 6,820  | $1,464$  | $1,464$  | $1,000$  |
 
 
 <h1><a name="usage">Usage</a></h1>
@@ -124,8 +124,8 @@ learn to systematically extract the wrong digits from the input image.
 
 **An example RS**:  For the (linear) system in the example above, a model can
 confuse 3's with 4's and still perfectly predict the output of the system.
-However, for a new, out-of-distribution task like `2 + 4`, it will wrongly
-output `5`.
+However, for a new, out-of-distribution task like $2 + 4$, it will wrongly
+output $5$.
 
 
 **Ready-made**: `MNAdd-Half` WRITEME
@@ -137,18 +137,18 @@ output `5`.
 
 <img src="assets/images/rsbench-mnlogic.png" alt="mnlogic" width="80%" height="auto">
 
-RSs arise whenever the knowledge K allows deducing the right label from
+RSs arise whenever the knowledge $\mathsf K$ allows deducing the right label from
 multiple configurations of concepts. This form of non-injectivity is a standard
 feature of most logic formulas, and in fact formulas as simple as the XOR are
 riddled by RSs. `MNLogic` allows to probe the pervasiveness of RSs in random
-logic formulas. Specifically, the input image is the concatenation of k MNIST
-images of zeros and ones representing the truth value of k bits, and the
-ground-truth label y is whether they satisfies the formula or not.
+logic formulas. Specifically, the input image is the concatenation of $k$ MNIST
+images of zeros and ones representing the truth value of $k$ bits, and the
+ground-truth label $y$ is whether they satisfies the formula or not.
 
-By default, the `MNLogic` assumes the formula is a k-bit XOR, but any other
+By default, the `MNLogic` assumes the formula is a $k$-bit XOR, but any other
 formula can be supplied. rsbench provides code to generate random CNF formulas,
-that is, random conjunctions of disjunctions (clauses) of k bits. The code
-allows to control the number of bits k and the number of structure of the
+that is, random conjunctions of disjunctions (clauses) of $k$ bits. The code
+allows to control the number of bits $k$ and the number of structure of the
 random formula, that is, the number of clauses and their length. It also avoids
 trivial data by ensuring each clauses is neither a tautology nor a
 contradiction.
@@ -160,7 +160,7 @@ contradiction.
 
 This task, inspired by Wassily Kandinsky's paintings and [Mueller and Holzinger 2021](https://www.sciencedirect.com/science/article/pii/S0004370221000977) requires simple (but non-trivial) perceptual processing and relatively complex reasoning in classifying logical patterns on sets of images comprising different shapes and colors. For example, each input can comprise two $64 \times 64$ images, i.e., $x = (x_1, x_2)$, each depicting three geometric primitives with different shapes (`square`, `triangle`, `circle`) and colors (`red`, `blue`, `yellow`). The goal is to predict whether $x_1$ and $x_2$ fit the same predefined logical pattern or not. The pattern is built out of predicates like `all primitives in the image have a different color`, `all primitives have the same color`, and `exactly two primitives have the same shape`.
 
-Unlike `MNLogic`, in `Kand-Logic` each primitive has multiple attributes that cannot easily be processed separately.  This means that RSs can easily appear, e.g., confuse shape with color when either is sufficient to entail the right prediction, as in the example above. We provide the data set used in [Marconato et al. 2024](https://arxiv.org/abs/2402.12240) (3 images per input with 3 primitives each) and a generator that allows configuring the number of images and primitives per input and the pattern itself.
+Unlike `MNLogic`, in `Kand-Logic` each primitive has multiple attributes that cannot easily be processed separately.  This means that RSs can easily appear, e.g., confuse shape with color when either is sufficient to entail the right prediction, as in the example above. We provide the data set used in [Marconato et al. 2024](https://arxiv.org/abs/2402.12240) ($3$ images per input with $3$ primitives each) and a generator that allows configuring the number of images and primitives per input and the pattern itself.
 
 
 # CLE4EVR
@@ -190,9 +190,9 @@ The goal is to infer what actions out of $\{ {\tt forward}, {\tt stop}, {\tt lef
 Input images, of size $720 \times 1280$, come with concept-level annotations, making it possible to assess the quality of the learned concepts.  The dataset comprises $16,082$ training examples, $2,270$ validation examples and $4,572$ test examples.
 
 The knowledge $\mathsf K$ establishes that, _e.g._, it is not safe to move $\tt forward$ if there are pedestrians on the road, based on a set of $21$ binary concepts indicating the presence of different obstacles on the road.
-The constraints specify conditions for being able to proceed (${\tt green\_light} \lor {\tt follow} \lor {\tt clear} \Rightarrow {\tt forward}$), stop (${\tt red\_light} \lor {\tt stop\_sign} \lor {\tt obstacle} \Rightarrow {\tt stop}$), and for turning left and right, as well as relationships between actions (like ${\tt stop} \Rightarrow \lnot {\tt forward}$). 
+The constraints specify conditions for being able to proceed (${\tt green\\_light} \lor {\tt follow} \lor {\tt clear} \Rightarrow {\tt forward}$), stop (${\tt red\\_light} \lor {\tt stop\\_sign} \lor {\tt obstacle} \Rightarrow {\tt stop}$), and for turning left and right, as well as relationships between actions (like ${\tt stop} \Rightarrow \lnot {\tt forward}$). 
 
-Common Reasoning Shortcuts allow to, for example confuse ${\tt pedestrians}$ with ${\tt red\_light}$ s, as they both imply the correct $ {\tt stop}$  action for all training examples.
+Common Reasoning Shortcuts allow to, for example confuse ${\tt pedestrians}$ with ${\tt red\\_light}$ s, as they both imply the correct $ {\tt stop}$  action for all training examples.
 
 
 # SDD-OIA
@@ -205,7 +205,7 @@ In short, ``SDD-OIA`` shares the same classes, concepts and (by default) knowled
 Images are generated by first sampling a desired label $\mathbf y$, then picking concepts $\mathbf c$ that yield that label, and then rendering an image $\mathbf x$ displaying those concepts.  This allows to easily control what concepts and labels should appear in all data splits, which in turn determine what kinds of RSs can be learned. The dataset we propose contains overall $6820$ training examples, $1464$ validation examples, and $1464$ test examples. Reasoning Shortcuts learned in this task rensemble those in ``BDD-OIA``.
 
 We also include a OOD test scenario, where the knowledge changes including a new exception under emergency case, this includes in total $1000$ examples. 
-Here, the vehicle is allowed to cross red lights in case of an ${\tt emergency}$. Formally, this alterates the label predictions where the new ${\tt emergency}$ variable that conditions the traffic rules, that is, $(\lnot {\tt emergency} \implies \text{original rule for {\tt stop}}) \land (\lnot {\tt emergency} \implies \text{alternative rule for {\tt stop}})$, and similarly for ${\tt turn\_left}$ and ${\tt turn\_right}$.  
+Here, the vehicle is allowed to cross red lights in case of an ${\tt emergency}$. Formally, this alterates the label predictions where the new ${\tt emergency}$ variable that conditions the traffic rules, that is, $(\lnot {\tt emergency} \implies \text{original rule for } {\tt stop})$ $\land$ $(\lnot {\tt emergency} \implies \text{alternative rule for } {\tt stop})$, and similarly for ${\tt turn\\_left}$ and ${\tt turn\\_right}$.  
 
 ``SDD-OIA`` comes with its generator, allowing to test different cases and creationg variations of other OOD scenarios can be created.
 
