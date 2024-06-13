@@ -256,7 +256,7 @@ based on the `Kandinsky-patterns` code, which is available under the
 generator.
 
 **Data**: All ready-made data sets and generated datasets are distributed under
-the [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+the [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 license, with the exception of `Kand-Logic`, which is derived from
 `Kandinsky-patterns` and as such is distributed under the
 [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
