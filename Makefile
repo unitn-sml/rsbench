@@ -45,7 +45,7 @@ install:
 
 serve:
 	@$(ECHO) '$(BLUE)Building site and making it available locally..$(NONE)'
-	(sleep 5; $(OPEN) http://127.0.0.1:4000) &
+	(sleep 5; $(OPEN) http://127.0.0.1:4000/rsbench/) &
 	@$(BUNDLE) $(EXEC) $(JEKYLL) $(SERVE)
 	@$(ECHO) '$(BLUE)Done$(NONE)'
 
