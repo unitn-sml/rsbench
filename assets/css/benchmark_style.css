@@ -201,6 +201,8 @@ img {
   border-radius: 5px;
   font-family: monospace;
   font-size: 0.95em;
-  white-space: pre;
+  white-space: nowrap;
   overflow-x: auto;
+  max-width: 100%;
+  display: block;
 }
