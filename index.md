@@ -30,6 +30,8 @@ neural and neuro-symbolic models is a far-from-solved problem.
 
 ### **Codebase**: [GitHub](https://github.com/unitn-sml/rsbench-code)
 
+### **Paper**: [Paper](https://arxiv.org/abs/2406.10368)
+
 <h1><a name="background">What is a Reasoning Shortcut?</a></h1>
 
 <img src="assets/images/reasoning-shortcut.png" alt="a reasoning shortcut" width="100%" height="auto">
