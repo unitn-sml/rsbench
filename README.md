@@ -1,8 +1,8 @@
 # A Benchmark Suite for Systematically Evaluating Reasoning Shortcuts
 
-Web site for the "Benchmarks for Reasoning Shortcuts: When Machine Learning Concepts Go Astray" paper made with [Jekyll](https://jekyllrb.com/) and hosted with [GitHub Pages](https://pages.github.com/).
+Web site for the "RSBench: A Benchmark Suite for Systematically Evaluating Reasoning Shortcuts" paper made with [Jekyll](https://jekyllrb.com/) and hosted with [GitHub Pages](https://pages.github.com/), NeurIPS 2024.
 
-The website is completely static and does not include JavaScript.
+Apart from MathJax for LaTeX formula rendering and the dark-light mode toggle, the website is completely static and does not include JavaScript.
 
 ## Github Pages deployment
 
@@ -28,3 +28,7 @@ make install
 > ```bash
 > make help
 > ```
+
+## Codebase
+
+The codebase for generating the datasets, evaluating them, and counting the Reasoning Shortcuts is available at the following link: [GitHub repository](https://github.com/unitn-sml/rsbench-code).
