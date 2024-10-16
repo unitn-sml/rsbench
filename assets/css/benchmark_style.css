@@ -47,10 +47,9 @@ table {
   border-bottom: 2px solid black;
   border-top: 2px solid black;
   border-spacing: 0;
-  width: 95%;
+  width: auto;
   margin: auto;
   margin-bottom: 1em;
-  display: block;
   overflow-x: auto;
 }
 
@@ -266,4 +265,8 @@ body.dark-mode table th, body.dark-mode table td {
 body.dark-mode table th {
   background-color: #333;
   color: #f5f5f5;
+}
+
+.digit {
+  margin: 0px
 }
