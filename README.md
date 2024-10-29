@@ -1,6 +1,6 @@
-# A Benchmark Suite for Systematically Evaluating Reasoning Shortcuts
+# A Neuro-Symbolic Benchmark Suite for Concept Quality and Reasoning Shortcuts
 
-Web site for the "RSBench: A Benchmark Suite for Systematically Evaluating Reasoning Shortcuts" paper made with [Jekyll](https://jekyllrb.com/) and hosted with [GitHub Pages](https://pages.github.com/), NeurIPS 2024.
+Web site for the ["A Neuro-Symbolic Benchmark Suite for Concept Quality and Reasoning Shortcuts"](https://arxiv.org/abs/2406.10368) paper made with [Jekyll](https://jekyllrb.com/) and hosted with [GitHub Pages](https://pages.github.com/), [NeurIPS 2024](https://neurips.cc/Conferences/2024).
 
 Apart from MathJax for LaTeX formula rendering and the dark-light mode toggle, the website is completely static and does not include JavaScript.
 

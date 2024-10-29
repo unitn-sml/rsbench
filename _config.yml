@@ -1,8 +1,8 @@
-title: "Benchmarks for Reasoning Shortcuts: When Machine Learning Concepts Go Astray"
+title: "A Neuro-Symbolic Benchmark Suite for Concept Quality and Reasoning Shortcuts"
 author: Samuele Bortolotti
 email: samuele.bortolotti@unitn.it
 description: >- # this means to ignore newlines until "baseurl:"
-  "Benchmarks for Reasoning Shortcuts: When Machine Learning Concepts Go Astray" benchmark paper
+  "A Neuro-Symbolic Benchmark Suite for Concept Quality and Reasoning Shortcuts" benchmark paper
 baseurl: "/rsbench" # the subpath of your site, e.g. /blog
 github_username: samuelebortolotti
 repository: unitn-sml/rsbenc

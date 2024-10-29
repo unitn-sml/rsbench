@@ -1,6 +1,6 @@
 ---
 layout: default
-title: rsbench A Benchmark Suite for Systematically Evaluating Reasoning Shortcuts
+title: rsbench A Neuro-Symbolic Benchmark Suite for Concept Quality and Reasoning Shortcuts
 ---
 
 {% include header.html %}
