@@ -1,9 +1,6 @@
 ---
 layout: default
 title: rsbench A Neuro-Symbolic Benchmark Suite for Concept Quality and Reasoning Shortcuts
-redirect_from:
-  - /rsbench/
-  - /rsbench/index.html
 ---
 
 {% include header.html %}

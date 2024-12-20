@@ -3,9 +3,9 @@ author: Samuele Bortolotti
 email: samuele.bortolotti@unitn.it
 description: >- # this means to ignore newlines until "baseurl:"
   "A Neuro-Symbolic Benchmark Suite for Concept Quality and Reasoning Shortcuts" benchmark paper
-baseurl: "/rsbench-website" # the subpath of your site, e.g. /blog
+baseurl: "/rsbench" # the subpath of your site, e.g. /blog
 github_username: samuelebortolotti
-repository: unitn-sml/rsbench-website
+repository: unitn-sml/rsbench
 markdown: kramdown
 
 # Build settings
