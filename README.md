@@ -29,6 +29,6 @@ make install
 > make help
 > ```
 
-## Codebase
+# Codebase
 
 The codebase for generating the datasets, evaluating them, and counting the Reasoning Shortcuts is available at the following link: [GitHub repository](https://github.com/unitn-sml/rsbench-code).

@@ -1,6 +1,9 @@
 ---
 layout: default
 title: rsbench A Neuro-Symbolic Benchmark Suite for Concept Quality and Reasoning Shortcuts
+redirect_from:
+  - /rsbench/
+  - /rsbench/index.html
 ---
 
 {% include header.html %}
@@ -30,7 +33,7 @@ neural and neuro-symbolic models is a far-from-solved problem.
 
 ### **Codebase**: [GitHub](https://github.com/unitn-sml/rsbench-code)
 
-### **Paper**: [Paper](https://arxiv.org/abs/2406.10368)
+### **Paper**: [OpenReview](https://openreview.net/pdf?id=5VtI484yVy)
 
 <h1><a name="background">What is a Reasoning Shortcut?</a></h1>
 
@@ -392,6 +395,35 @@ for obtaining an (epsilon,delta)-approximation of the exact RS count.
 
 Alternative solvers can be used analogously.  Exact solvers include [`pyeda`](https://pyeda.readthedocs.io/en/latest/) and
 [`pysdd`](https://github.com/wannesm/PySDD).
+
+<h1><a name="relevant">Relevant Papers using rsbench for studying RSs</a></h1>
+
+<ul style="list-style: none;">
+  <li>
+    <strong>Authors:</strong> Emanuele Marconato, Stefano Teso, Antonio Vergari, Andrea Passerini <br>
+    <strong>Title:</strong> <a href="https://dl.acm.org/doi/10.5555/3666122.3669292" target="_blank">
+      Not all neuro-symbolic concepts are created equal: analysis and mitigation of reasoning shortcuts
+    </a> <br>
+    <strong>Publication:</strong> <em>Neural Information Processing Systems (NeurIPS)</em>, 2023 <br>
+    <span>TL;DR: Why RSs appear, their root causes, and mitigation strategies</span>
+  </li>
+  <li>
+    <strong>Authors:</strong> Emanuele Marconato, Samuele Bortolotti, Emile van Krieken, Antonio Vergari, Andrea Passerini, Stefano Teso <br>
+    <strong>Title:</strong> <a href="https://proceedings.mlr.press/v244/marconato24a.html" target="_blank">
+      BEARS Make Neuro-Symbolic Models Aware of their Reasoning Shortcuts
+    </a> <br>
+    <strong>Publication:</strong> <em>Uncertainty in Artificial Intelligence (UAI)</em>, 2024 <br>
+    <span>TL;DR: How to make Neuro-Symbolic models aware of their RSs</span>
+  </li>
+  <li>
+    <strong>Authors:</strong> Xiao-Wen Yang, Wen-Da Wei, Jie-Jing Shao, Yu-Feng Li, Zhi-Hua Zhou <br>
+    <strong>Title:</strong> <a href="https://proceedings.mlr.press/v235/yang24ac.html" target="_blank">
+      Analysis for Abductive Learning and Neural-Symbolic Reasoning Shortcuts
+    </a> <br>
+    <strong>Publication:</strong> <em>International Conference on Machine Learning (ICML)</em>, 2024 <br>
+    <span>TL;DR: Reduce shortcut risk using Abductive Learning</span>
+  </li>
+</ul>
 
 <h1><a name="metadata">Metadata</a></h1>
 

@@ -3,15 +3,16 @@ author: Samuele Bortolotti
 email: samuele.bortolotti@unitn.it
 description: >- # this means to ignore newlines until "baseurl:"
   "A Neuro-Symbolic Benchmark Suite for Concept Quality and Reasoning Shortcuts" benchmark paper
-baseurl: "/rsbench" # the subpath of your site, e.g. /blog
+baseurl: "/rsbench-website" # the subpath of your site, e.g. /blog
 github_username: samuelebortolotti
-repository: unitn-sml/rsbenc
+repository: unitn-sml/rsbench-website
 markdown: kramdown
 
 # Build settings
 encoding: UTF-8
 plugins:
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 # Default language
 include: [en]
