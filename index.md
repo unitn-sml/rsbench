@@ -130,7 +130,7 @@ class required_args:
 args = required_args()
 
 dataset = MNLOGIC(args)
-train_loader, val_loader, test_loader = dataset.get_loaders()
+train_loader, val_loader, test_loader = dataset.get_data_loaders()
 
 model = #define your model here
 optimizer = #define optimizer here
