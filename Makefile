@@ -19,6 +19,7 @@ NONE := \033[0m
 # ======= COMMANDS =================
 ECHO := echo -e
 OPEN := xdg-open
+MKDIR := mkdir -p
 
 # RULES
 .PHONY: help env install install-ruby serve
@@ -40,7 +41,7 @@ install-ruby:
 
 install:
 	@$(ECHO) '$(GREEN)Installing requirements..$(NONE)'
-	@$(BUNDLE) install
+	@$(BUNDLE) install --path vendor/bundle
 	@$(ECHO) '$(GREEN)Done$(NONE)'
 
 serve:
@@ -53,3 +54,9 @@ build:
 	@$(ECHO) '$(BLUE)Building site..$(NONE)'
 	@$(BUNDLE) $(EXEC) $(JEKYLL) $(BUILD)
 	@$(ECHO) '$(BLUE)Done$(NONE)'
+
+env:
+	@$(ECHO) '$(GREEN)Generating virtual environment..$(NONE)'
+	@$(MKDIR) vendor/bundle
+	$(RBENV) local $(shell $(RBENV) install -l | grep -v - | tail -1)
+	@$(ECHO) '$(GREEN)Enviroment created$(NONE)'
