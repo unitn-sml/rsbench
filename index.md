@@ -30,7 +30,7 @@ neural and neuro-symbolic models is a far-from-solved problem.
 
 ### **Codebase**: [GitHub](https://github.com/unitn-sml/rsbench-code)
 
-### **Paper**: [OpenReview](https://openreview.net/pdf?id=5VtI484yVy)
+### **Paper**: [Proceedings](https://proceedings.neurips.cc/paper_files/paper/2024/file/d1d11bf8299334d354949ba8738e8301-Paper-Datasets_and_Benchmarks_Track.pdf)
 
 <h1><a name="background">What is a Reasoning Shortcut?</a></h1>
 
@@ -420,7 +420,17 @@ Alternative solvers can be used analogously.  Exact solvers include [`pyeda`](ht
     <strong>Publication:</strong> <em>International Conference on Machine Learning (ICML)</em>, 2024 <br>
     <span>TL;DR: Reduce shortcut risk using Abductive Learning</span>
   </li>
+  <li>
+    <strong>Authors:</strong> Samuele Bortolotti, Emanuele Marconato, Paolo Morettin, Andrea Passerini, Stefano Teso <br>
+    <strong>Title:</strong> <a href="https://openreview.net/pdf?id=rdp1dLxyMI" target="_blank">
+      Shortcuts and Identifiability in Concept-based Models from a Neuro-Symbolic Lens
+    </a> <br>
+    <strong>Publication:</strong> <em>Neural Information Processing Systems (NeurIPS)</em>, 2025 <br>
+    <span>TL;DR: Reasoning Shortcuts when the knowledge is learned</span>
+  </li>
 </ul>
+
+> **Note:** Newly released gentle introduction on Reasoning Shortcuts called [**_Symbol Grounding in Neuro-Symbolic AI: A Gentle Introduction to Reasoning Shortcuts_**](https://arxiv.org/pdf/2510.14538) by Emanuele Marconato, Samuele Bortolotti, Emile van Krieken, Paolo Morettin, Elena Umili, Antonio Vergari, Efthymia Tsamoura, Andrea Passerini, and Stefano Teso.
 
 <h1><a name="metadata">Metadata</a></h1>
 
